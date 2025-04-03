@@ -1,0 +1,9 @@
+RewriteEngine On
+RewriteBase /
+
+# Jeśli odwiedzisz stronę z portem (np. https://dev.crhost.store:443), przekieruj na czysty URL
+RewriteCond %{SERVER_PORT} 443
+RewriteRule ^(.*)$ https://dev.crhost.store/$1 [L,R=301]
+
+# Jeśli chcesz mieć czysty URL z /home, dodaj to
+RewriteRule ^home$ /index.php [L]
